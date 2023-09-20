@@ -1,0 +1,135 @@
+.main2{
+    display: flex;
+    padding: 17px 35px;
+    background: #c51724;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .title {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+.title h2{
+    font-size: 20px;
+}
+.sticky {
+    padding: 10px 0px;
+    text-align: center;
+    background: #F6F5FD;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+    border-top: 1px solid #c51724;
+  }
+  
+  .row {
+  
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  
+  .main{
+    padding: 20px 24px 0px 24px;
+      text-align: center;
+    }
+    h6{
+        font-size: 12px;
+    }
+    h1{
+        font-size: 55px;
+    font-weight: 300;
+    font-family: lato;
+    letter-spacing: -4px;
+    margin-bottom: 0px;
+    }
+    .col p{
+        font-size: 15px;
+    font-weight: 400;
+    font-family: 'Lato';
+    margin-top: -8px;
+    }
+    .borderbottom{
+        border-bottom: 1px solid #c51724;
+        
+    }
+    .check {
+        display: flex;
+        align-items: center;
+        padding: 2px 19px 10px 0px;
+        font-size: 21px;
+      }
+      .custom-control {
+        position: relative;
+        z-index: 1;
+        display: block;
+        min-height: 1.5rem;
+        padding-left: 0rem;
+        
+    }
+    input[type=radio]{
+        border: 0.25px solid #0009;
+        width: 22px;
+        height: 22px;
+    }
+    .row>* {
+        flex-shrink: 0;
+        width: 20%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0);
+        padding-left: calc(var(--bs-gutter-x) * 0);
+        margin-top: var(--bs-gutter-y);
+    }
+    .btn6 {
+        padding: 7px 25px 7px 25px;
+        background: #c51724;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        margin-bottom: 3px;
+        font-size: 16px;
+        text-align: center;
+    }
+    input[type='radio']:checked:after {
+        width: 22px;
+        height: 22px;
+        border-radius: 15px;
+        position: relative;
+        background-color: #204c77;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 3px solid #204c77;
+    }
+    input[type='radio'].ven:checked:after {
+        width: 22px;
+        height: 22px;
+        border-radius: 15px;
+        position: relative;
+        background-color: #116418;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 3px solid #116418;
+    }
+    input[type='radio'].addmin:checked:after {
+        width: 22px;
+        height: 22px;
+        border-radius: 15px;
+        position: relative;
+        background-color: #c51724;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 3px solid #c51724;
+    }
+    #red{
+        color:#c51724;
+    }
+    #blue{
+        color: #204c77;
+    }
+    #green{
+        color: #116418;
+    }

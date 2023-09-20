@@ -1,0 +1,236 @@
+<div class="container-fluid main1">
+    <div class="row reverse"><a href="javascript:history.back()"><img src="assets/images/back.svg" width="120%;"></a>
+    </div>
+    <div class="title">
+        <h2 style="font-size:20px;">Sample  Details</h2>
+    </div>
+    <div class="row home">
+        <a routerLink="/home.component"><img src="assets/images/home.svg" width="28px;"></a>
+    </div>
+</div>
+
+
+
+<form [formGroup]="vendorForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div class="container-fluid" style="padding: 16px 20px 30px 20px;">
+        <div class="row mb-4">
+            <img [src]="imageSrc" *ngIf="imageSrc" style="height:300px;width:100%;">
+            <div class="file-upload"
+                style="background-image: url(http://103.139.59.165:8085/image/{{vendorForm.value.file1}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+                
+
+
+                <div class="image-upload-wrap">
+                    <input type="file" (change)="onFileSelected($event)" accept="image/*" class="file-upload-input"
+                         id="topimage" formControlName="topimage">
+                   
+                    <div class="drag-text">
+                        <img src="assets/images/icon.png" width="50px;">
+                        <h3>Uplaod Images</h3>
+                    </div>
+                </div>
+                <div class="file-upload-content">
+                    <img class="file-upload-image" src="#" alt="your image" />
+                    <div class="image-title-wrap">
+                        <button type="button" class="remove-image">Remove <span class="image-title">Uploaded
+                                Image</span></button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+       
+        <div  id="London" style="padding: 0px;">
+        <div class="row" style="margin:0px 0px;">
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="text-field">Style No.<span style="color:red;">*</span></label>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-6" style="width: 40% !important;">
+                        <select class="form-select" id="brandid"  formControlName="brandid" required>
+
+                            <option *ngFor="let element of brandidval" [value]="element.id">
+                                {{element.name}}
+                            </option>
+
+                        </select>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6" style="width: 58% !important;">
+                        <input type="number" class="form-control" id="brandnumber" placeholder=""   formControlName="brandnumber">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="select-option">Brand<span style="color:red;">*</span></label>
+                <select class="form-select" id="brand"  formControlName="brand" >
+                    <option *ngFor="let element of brandvalue" [value]="element.id">
+                        {{element.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row" style="margin:21px 0px;">
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="select-option">Category<span style="color:red;">*</span></label>
+                <select class="form-select" id="category"  formControlName="category" >
+                    <option *ngFor="let element of categoryvalue" [value]="element.id">
+                        {{element.name}}
+                    </option>
+                </select>
+            </div>
+
+
+        </div>
+        <div class="row" style="margin:20px 0px;">
+
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="select-option">Season<span style="color:red;">*</span></label>
+                <select class="form-select" id="season"  formControlName="season" required>
+                    <option *ngFor="let element of seasonvalue" [value]="element.id">
+                        {{element.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="text-field">Designer<span style="color:red;">*</span></label>
+                <input type="name" class="form-control" id="designer" placeholder="" name="designer"
+                    formControlName="designer">
+            </div>
+
+
+        </div>
+        <div class="row1">
+            <div class="column">
+
+                <label>Gender<span style="color:red;">*</span></label><br>
+                <div style="display:flex;">
+                    <div class="check" required>
+                        <input type="radio" class="checked" id="male"  value="M"
+                            formControlName="gender">
+                        &nbsp;&nbsp;<label class="custom-control" for="male">Male</label>
+                    </div>
+                    <div class="check">
+                        <input type="radio" class="" id="female" formControlName="gender" value="F">
+                        &nbsp;&nbsp;<label class="custom-control" for="gender">Female</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="border1">Design Description</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Fabric<span style="color:red;">*</span></label><br>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" id="fabric"
+                    name="fabric" formControlName="fabric" required></textarea>
+            </div>
+        </div>
+        <div class="row1" style="margin-top: 30px;">
+            <div class="column" required>
+
+                <label style="margin-bottom: 6px;">Size<span style="color:red;">*</span></label><br>
+                <div style="display:flex;">
+                    <div class="check1"><input type="checkbox" class="checkbox" id="s"  formControlName="s">
+                        <span style="font-size: 18px;">&nbsp;&nbsp;S</span>
+                    </div>
+                    <div class="check1"><input type="checkbox" class="checkbox"  formControlName="m" id="m">
+                        <span style="font-size: 18px;">&nbsp;&nbsp;M</span>
+                    </div>
+                    <div class="check1"><input type="checkbox" class="checkbox"  formControlName="l" id="l">
+                        <span style="font-size: 18px;">&nbsp;&nbsp;L</span>
+                    </div>
+                    <div class="check2"><input type="checkbox" class="checkbox"  formControlName="xl" id="xl">
+                        <span style="font-size: 18px;">&nbsp;&nbsp;XL</span>
+                    </div>
+                    <div class="check2"><input type="checkbox" class="checkbox"  formControlName="twoxl"
+                            id="twoxl"> <span style="font-size: 18px;">&nbsp;&nbsp;2XL</span></div>
+                </div>
+                <div style="display:flex;">
+                    <div class="check2"><input type="checkbox" class="checkbox"  formControlName="threexl"
+                            id="threexl"> <span style="font-size: 18px;">&nbsp;&nbsp;3XL</span></div>
+                    <div class="check2"><input type="checkbox" class="checkbox"  formControlName="fourxl"
+                            id="fourxl"> <span style="font-size: 18px;">&nbsp;&nbsp;4XL</span></div>
+                    <div class="check2"><input type="checkbox" class="checkbox"  formControlName="fivexl"
+                            id="fivex"> <span style="font-size: 18px;">&nbsp;&nbsp;5XL</span></div>
+                    <div class="check2"><input type="checkbox" class="checkbox"  formControlName="sixxl"
+                            id="sixxl"> <span style="font-size: 18px;">&nbsp;&nbsp;6XL</span></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row2" style="margin-top: 29px;">
+            <label style="margin-bottom: 8px;">Colors<span style="color:red;">*</span></label><br>
+
+            <div class="column">
+                <img [src]="imageSrcbottom" *ngIf="imageSrcbottom" style="height:160px;width:30%;margin-bottom: 10px;">
+                <label class="picture" for="picture__input" tabindex="0"
+                    style="background-image: url(http://103.139.59.165:8085/image/{{vendorForm.value.file2}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+                    Upload <br>Image
+                </label>
+
+                <input type="file" (change)="onFileSelectBottom($event)"  id="picture__input"
+                    style="display:none;" formControlName="pictureinput" required>
+
+                  
+                <input id="textaa"  type="text" style="width: 103px;padding: 7px;margin-top: 10px;"
+                    formControlName="color" required>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top: 25px;">
+            <div class="col">
+                <h3 class="border1" style="font-size: 23px;">Prospected Price<span style="color:red;">*</span></h3>
+            </div>
+        </div>
+        <div class="row" style="display:flex !important;align-items: center;">
+            <div class="col" style="display: flex;align-items: center;">
+                <img src="assets/images/Group 562.svg" style="width: 13%;height: 40px;">
+                &nbsp;<input type="number" class="form-control" id="price" placeholder="" name="price"
+                    formControlName="price" required style="width: 66%;margin-left: 14px;">
+            </div>
+            <div class="col" style="width: 30%;">
+                <h4 style="font-size: 23px;">/ Piece</h4>
+            </div>
+        </div>
+        <div class="row" style="padding: 54px 64px 136px 64px;">
+            <div class="col"></div>
+            <div class="col"><button type="submit" class="btn">SUBMIT</button></div>
+            <div class="col"></div>
+        </div>
+        </div>
+    </div>
+    
+</form>
+
+
+
+
+
+<div class="container-fluid sticky">
+    <div class="row" style="justify-content: center !important;margin: 0px;">
+        <div class="col-md-3 col-sm-3 col-lg-3 collll">
+            <a routerLink="/supernewdesign.component"><img src="/assets/images/New Design empty.svg" width="27px;"></a>
+            <h6>New Design</h6>
+        </div>
+        <div class="col-md-3 col-sm-3 col-lg-3 collll">
+            <a routerLink="/superorder.component"><img src="/assets/images/Order history.svg" width="37px;"></a>
+            <h6>Order History</h6>
+        </div>
+        <div class="col-md-3 col-sm-3 col-lg-3 collll">
+            <a routerLink="/superreapet.component"><img src="/assets/images/Repeat order.svg" width="37x;"></a>
+            <h6>Repeat Order</h6>
+        </div>
+        <div class="col-md-3 col-sm-3 col-lg-3 collll">
+            <a routerLink="/superprofile.component"><img src="/assets/images/1.1.svg" width="35px;"></a>
+            <h6>User Profile</h6>
+        </div>
+        <div class="col-md-3 col-sm-3 col-lg-3 collll">
+            <a routerLink="/superadminprofile.component"><img src="/assets/images/1.2.svg" width="35px;"></a>
+            <h6>My Profile</h6>
+        </div>
+    </div>
+    </div>

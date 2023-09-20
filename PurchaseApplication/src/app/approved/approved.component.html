@@ -1,0 +1,244 @@
+
+
+<div class="main1">
+    <div class="reverse"><a href="javascript:history.back()"><img src="assets/images/back.svg" width="100%;"></a></div>
+    <div class="title">
+        <h2>Sample Detail</h2>
+    </div>
+    <div class="home">
+        <a routerLink="/home.component"><img src="assets/images/home.svg" width="31px;"></a>
+    </div>
+</div>
+
+
+<form action="">
+    <div class="container-fluid" style="padding: 16px 20px;">
+        <!-- <div class="row">
+            <div class="file-upload">
+                <div class="image-upload-wrap">
+                    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                    <div class="drag-text">
+                        <img src="assets/images/icon.png" width="50px;">
+                        <h3>Uplaod Images</h3>
+                    </div>
+                </div>
+                <div class="file-upload-content">
+                    <img class="file-upload-image" src="#" alt="your image" />
+                    <div class="image-title-wrap">
+                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
+                                class="image-title">Uploaded Image</span></button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row" style="text-align: center;">
+            <div class="col">
+                <img src="assets/images/designers-masterpiese-group-of-fashion-designers-2022-02-02-19-58-52-utc.png"
+                    width="auto">
+            </div>
+        </div>
+        <div class="row mt-3" style="padding: 0px 40px;text-align: center;">
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;text-align:center;">
+                <button type="button" class="btn tablinks" (click)="openCityLondon('Lodon')"
+                    style="padding: 7px 12px !important;color: #c51724;font-size: n10px;border-color: #c51724;background: #fff;;">Review
+                    History</button>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <button type="submit" class="btn2 tablinks" (click)="openCitytokyo('Tokyo')">Sample
+                    Description</button>
+            </div>
+        </div>
+        <div class="row mt-2" style="text-align: center;">
+            <div class="col">
+                <h5>Style No.: SW 5324</h5>
+                <p style="color: #116418;font-weight: bold;">APPROVED</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col"></div>
+        </div>
+        <div id="Tokyo" class="mt-4" style="display:none;padding: 0px 15px;">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4" style="width: 30%;">
+                    <img src="assets/images/Image 1.png">
+                </div>
+                <div class="col-md-8 col-sm-8 col-lg-8" style="width: 69%;">
+                    <p>Re-Submitted: 14/11/22</p>
+                    <p class="approved">APPROVED</p>
+                    <h6 class="feed">I have done the button changes as per your desire.</h6>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4 col-sm-4 col-lg-4" style="width: 30%;">
+                    <img src="assets/images/Image 1.png">
+                </div>
+                <div class="col-md-8 col-sm-8 col-lg-8" style="width: 69%;">
+                    <p>Re-Submitted: 14/11/22</p>
+                    <p>Comment:</p>
+                    <h6 class="feed">I have done the button changes as per your desire.</h6><br>
+                    <h6>Reviewed on: 28/10/22 | Rocky Feedback:</h6><br>
+                    <img src="assets/images/Image 1.png"><br>
+                    <h6>Reviewed on: 14/11/22 | Kritika Feedback:</h6><br>
+                    <h6 class="feed" style="font-weight:300;">Next, put the garment on a form which reflects your base
+                        size.</h6>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4 col-sm-4 col-lg-4" style="width: 30%;">
+                    <img src="assets/images/Image 1.png">
+                </div>
+                <div class="col-md-8 col-sm-8 col-lg-8" style="width: 69%;">
+                    <h6>Reviewed on: 14/11/22 | Kritika Feedback:</h6><br>
+                    <h6 class="feed">Next, put the garment on a form which reflects your base size. Begin evaluating the
+                        fit by looking for drag lines and stress points. Ensure that the garment is laying correctly on
+                        the form before you begin making fit changes. If you need to check the movement or function of
+                        the garment you can fit it on a model who closely compares to your base size.</h6>
+                </div>
+            </div>
+        </div>
+        <div  id="London" style="padding: 0px 15px;">
+            <div class="row" style="margin:0px 0px;">
+                <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                    <label for="text-field">Style No.</label>
+
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-sm-6" style="width: 27% !important;">
+                            <select class="form-control" id="select-option">
+                                <option value="option1">BA</option>
+                                <option value="option2">BA</option>
+                                <option value="option3">LM</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6" style="width: 70% !important;">
+                            <input type="text" class="form-control" id="text-field" placeholder="327878">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                    <label for="select-option">Brand</label>
+                    <select class="form-control" id="select-option">
+                        <option value="option1">option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                    <label for="select-option">Category</label>
+                    <select class="form-control" id="select-option">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="row" style="margin:20px 0px;">
+
+                <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                    <label for="select-option">Season</label>
+                    <select class="form-control" id="select-option">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                    <label for="text-field">Designer</label>
+                    <input type="text" class="form-control" id="text-field" placeholder="" value="Test">
+                </div>
+
+
+            </div>
+            <div class="row1">
+                <div class="column">
+
+                    <label>Gender</label><br>
+                    <div style="display:flex;">
+                        <div class="check"><input type="radio" class="checked" checked> &nbsp;&nbsp;Male</div>
+                        <div class="check"><input type="radio" class=""> &nbsp;&nbsp;Female</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3 class="border1">Design Description</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="row1" style="margin-top: 30px;">
+                <div class="column">
+
+                    <label>Size</label><br>
+                    <div style="display:flex;">
+                        <div class="check1"><input type="checkbox" class="checkbox" checked> &nbsp;&nbsp;S</div>
+                        <div class="check1"><input type="checkbox" class="checkbox" checked> &nbsp;&nbsp;M</div>
+                        <div class="check1"><input type="checkbox" class="checkbox"> &nbsp;&nbsp;L</div>
+                        <div class="check1"><input type="checkbox" class="checkbox" checked> &nbsp;&nbsp;XL</div>
+                        <div class="check1"><input type="checkbox" class="checkbox"> &nbsp;&nbsp;2XL</div>
+                    </div>
+                    <div style="display:flex;">
+                        <div class="check1"><input type="checkbox" class="checkbox"> &nbsp;&nbsp;3XL</div>
+                        <div class="check1"><input type="checkbox" class="checkbox" checked> &nbsp;&nbsp;4XL</div>
+                        <div class="check1"><input type="checkbox" class="checkbox" checked> &nbsp;&nbsp;5XL</div>
+                        <div class="check1"><input type="checkbox" class="checkbox"> &nbsp;&nbsp;6XL</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 29px;">
+                <label>Colors</label><br><br>
+                <div class="col">
+                    <label class="picture" for="picture__input" tabindex="0">
+                        Upload <br>Images
+                    </label>
+
+                    <input type="file" name="picture__input" id="picture__input" style="display:none;">
+                    <input type="color" id="textaa" name="number" rows="4" value="#19c37d"
+                        style="width: 119px;padding: 7px;margin-top: 10px;" value="Red">
+                </div>
+                <div class="col">
+                    <label class="picture" for="picture__input" tabindex="0">
+                        Upload <br>Images
+                    </label>
+
+                    <input type="file" name="picture__input" id="picture__input" style="display:none;">
+                    <input type="color" id="textaa" name="number" value="#000" rows="4"
+                        style="width: 119px;padding: 7px;margin-top: 10px;" value="Red">
+                </div>
+
+
+
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <h3 class="border1">Prospected Price</h3>
+                </div>
+            </div>
+            <div class="row" style="display:flex !important;align-items: center;">
+                <div class="col" style="display: flex;align-items: center;">
+                    <img src="assets/images/rupee-indian.png" style="width: 17%;height: 40px;">
+                    <input type="text" class="form-control" id="text-field" placeholder="3000" value="3000">
+                </div>
+                <div class="col" style="width: 30%;">
+                    <h4>/ Piece</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding: 56px 64px 100px 64px;">
+            <div class="col"></div>
+            <div class=""><a href="order.component"><button type="button" class="btn">Order Detail </button></a>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</form>

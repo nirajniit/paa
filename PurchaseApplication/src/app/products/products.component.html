@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row mt-4 mb-4">
+        <div class="col">
+            <h4>Order in Process</h4>
+        </div>
+      
+    </div>
+    <div class="row">
+        <img src="assets/images/Banner.png">
+        
+    </div>
+</div>
+<div class="container-fluid">
+    
+    
+    
+    
+    <div class="row mt-5" style="padding-bottom: 45px;">
+        <h4>New Designs
+        </h4>
+       
+        <div class="col"  *ngFor="let item of vendorProduct; let i = index">
+            
+            <a    href="/sample.component?prodid={{item.id}}" > 
+                <img src="{{imgConfig}}/{{item.file1}}" width="102px;"height="102px;">
+            </a>
+            <h6 style="color: #c51724;padding-top: 6px;">#{{brandidval[item.brandid == 0 ? item.brandid : 0 ].name}}{{item.brandnumber}}</h6>
+        </div>
+       
+        <div class="col">
+            
+        </div>
+        
+    </div>
+
+
+
+
+</div>
+<div class="container" style="padding-bottom: 110px;">
+    <div class="row">
+        <h4 style="margin-bottom: 20px;">Overall Business</h4>
+        <div class="col">
+           <h2>35</h2>
+           <h6>TOTAL ORDER</h6>
+           <p style="color: #116418;">INR 42,000</p>
+        </div>
+        <div class="col">
+            <h2 style="color:#ffbe00;">12</h2>
+            <h6>IN PROCESS</h6>
+            <p style="color:#ffbe00;">INR 12,000</p>
+         </div>
+        <div class="col">
+            <h2 style="color: #116418;">23</h2>
+            <h6>COMPLETED</h6>
+            <p style="color: #116418;">INR 22,000</p>
+         </div>
+         
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+           <h2 style="color: #204c77;">13</h2>
+           <h6>REPEATED</h6>
+           <p style="color: #204c77;">INR 42,000</p>
+        </div>
+        <div class="col">
+            <h2 style="color:#6f0f16;">00</h2>
+            <h6>CANCELLED</h6>
+            <p style="color:#6f0f16;">INR 5,000</p>
+         </div>
+        <div class="col">
+            <h2 style="color: #c51724;">01</h2>
+            <h6>DISAPPROVED</h6>
+         </div>
+         
+    </div>
+</div>
