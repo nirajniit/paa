@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit {
     formData.append("mobile", this.LoginForm.value.mobile);
     formData.append("password", this.LoginForm.value.password);
 
-    alert("Token "+environment.LOGIN_TOKEN);
+    
 
     // call login api and user api and compare both
     this.apiService.login(formData).subscribe(

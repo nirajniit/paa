@@ -65,9 +65,6 @@ export class ApiService {
   saveUserType(formData: any): Observable<any> {
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
-    console.log("============servie JSON.stringify(===================");
-    console.log(JSON.stringify(formData));
-    console.log("============servie ===================");
     return this.http.post<any>(this.apiUrl + "/login/save", formData, {});
 
   }
@@ -88,12 +85,6 @@ saveVendorProduct(formData:any): Observable<any> {
       headers: headers
     };
 
-
-
-    console.log("=============saveVendorProduct option=============");
-    console.log(options);
-    console.log("=============saveVendorProduct option=============");
-   
    
     return this.http.post<any>(this.apiUrl+"/managedesignerItem/add_designeritem",formData,options);
   
@@ -110,9 +101,7 @@ saveVendorProduct(formData:any): Observable<any> {
   // new register api define here TokenService.getToken
 
   userRegister(body: any): Observable<any> {
-    console.log("======body========");
-    console.log(body);
-    console.log("======body========");
+   
     this.myheaders = new HttpHeaders({
       "Authorization":"Bearer "+ TokenService.getToken(),
       'Content-Type': "application/json",

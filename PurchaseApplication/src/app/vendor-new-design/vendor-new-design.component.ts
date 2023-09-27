@@ -37,6 +37,8 @@ export class VendorNewDesignComponent implements OnInit {
   formGroup: any;
   sizes: any;
 
+  colorData :any;
+
 
 
   constructor(private fb: FormBuilder, apiService: ApiService, router: Router, serviceService: ServiceService) {
@@ -56,7 +58,7 @@ export class VendorNewDesignComponent implements OnInit {
     this.mainhead.style.display = 'none';
     // this.tokenService=tokenService
     this.apiService = apiService;
-    
+    this.colorData = [];
 
 
     this.apiService.getSize().subscribe(
@@ -117,7 +119,7 @@ export class VendorNewDesignComponent implements OnInit {
     formData.append("gender", this.vendorForm.value.gender);
     formData.append("fabric", this.vendorForm.value.fabric);
     formData.append("size", this.vendorForm.value.size);
-    formData.append("item_color", this.vendorForm.value.item_color);
+    formData.append("item_color", this.colorData);
     
     this.imageDataBottom.forEach((file) => {
       formData.append("item_picture",file);
@@ -188,6 +190,20 @@ onFileSelectBottom(event: any, index: number) {
     return this.vendorForm.controls;
 
   }
+
+
+
+      getSelectedColor(event: any, index: number)
+      {
+            console.log(event.target.value + "  " + index);
+
+            if (index >= 0 && index <= this.colorData.length) {
+              this.colorData.splice(index, 0, event.target.value);
+            }
+
+            console.log(this.colorData);
+      }
+
 
 
 }

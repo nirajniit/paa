@@ -139,13 +139,16 @@
                 <div style="display:flex;">
                     <div *ngIf="sizes" style="display: flex;">
 
-                        <div class="check1" *ngFor="let size of sizes">
-                            <input type="checkbox" class="checkbox" [id]="size.id" [name]="size.size" formControlName="size">
-                            <label for="{{ size.id }}" style="font-size: 18px;">&nbsp;&nbsp;{{ size.size }}</label>
-                        </div>
+                        <select class="form-select" id="selectedItems" formControlName="size" multiple>
+                            <option *ngFor="let item of sizes" [value]="item.id">{{ item.size }} </option>
+                        </select>
+    
+
+                       
 
                     </div>
 
+                    
                 </div>
 
             </div>
@@ -158,7 +161,7 @@
                   formControlName="item_picture">
               
                 <input [id]="'text' + i" [name]="'color' + i" type="text" style="width: 94px; padding: 7px; margin-top: 10px;"
-                  formControlName="item_color">
+                formControlName="item_color" (keyup)="getSelectedColor($event, i)">
               
                 <button (click)="removeInput(i)" *ngIf="inputs.length > 1" class="sachinbtn">-</button>
                 <br />
@@ -183,6 +186,8 @@
                 <h4>/ Piece</h4>
             </div>
         </div>
+
+
         <div class="row" style="padding: 54px 64px;">
             <div class="col"></div>
             <div class="col"><button type="submit" class="btn" >SUBMIT</button></div>
