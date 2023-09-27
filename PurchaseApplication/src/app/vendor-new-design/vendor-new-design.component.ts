@@ -29,7 +29,7 @@ export class VendorNewDesignComponent implements OnInit {
   categoryvalue: any;
   seasonvalue: any;
   
-  inputs: string[] = [''];
+  inputs: string[] = ['image0'];
   imageDataBottom: File[] = [];
     
   topimage: any;
@@ -39,7 +39,7 @@ export class VendorNewDesignComponent implements OnInit {
 
   colorData :any;
 
-
+  image1 : any;
 
   constructor(private fb: FormBuilder, apiService: ApiService, router: Router, serviceService: ServiceService) {
 
@@ -59,6 +59,11 @@ export class VendorNewDesignComponent implements OnInit {
     // this.tokenService=tokenService
     this.apiService = apiService;
     this.colorData = [];
+
+   
+
+
+    
 
 
     this.apiService.getSize().subscribe(
@@ -140,29 +145,71 @@ export class VendorNewDesignComponent implements OnInit {
   }
 
 
-onFileSelectBottom(event: any, index: number) {
-  const file = event.target.files[0];
-  this.imageDataBottom.push(file);
-  this.formGroup.get(`picture__input${index}`).setValue(file);
-}
+  onFileSelectBottom(event: any, index: number) {
+
+    let fileInput1 = event.target;
+    
+
+    if (fileInput1.files && fileInput1.files.length > 0) {
+
+      let file = event.target.files[0];
+      this.imageDataBottom.push(file);
+
+
+    if (file) {
+      // Read the selected file as a Data URL
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      // Set the selectedImage variable when the file is loaded
+      reader.onload = () => {
+       this.image1 = reader.result;
+      };
+    }
+
+
+    console.log("=========== onFileSelectBottom Arrays ===========");
+    console.log(this.inputs);
+    console.log(this.imageDataBottom);
+    console.log(this.colorData);
+    console.log("=========== onFileSelectBottom Arrays ===========");
+  }
+
+   
+  }
 
 
   addInput() {
     const newIndex = this.inputs.length;
-    this.inputs.push('');
-    this.formGroup.addControl(`pictureinput${newIndex}`, new FormControl(''));
-    this.formGroup.addControl(`color${newIndex}`, new FormControl(''));
+    this.inputs.push('image'+newIndex);
+
+
+    console.log("=========== addInput Arrays ===========");
+    console.log(this.inputs);
+    console.log(this.imageDataBottom);
+    console.log(this.colorData);
+    console.log("=========== addInput Arrays ===========");
+
+ 
   }
 
   removeInput(index: number) {
-    this.inputs.splice(index, 1);
-    this.imageDataBottom.splice(index,1);
-    console.log("========================this.imageDataBottom==================");
-    console.log(this.imageDataBottom);
-    console.log("========================this.imageDataBottom==================");
+    if (index >= 0 && index < this.inputs.length) {
+      
+      // Remove the corresponding elements from the arrays
+      this.inputs.splice(index, 1);
+      this.imageDataBottom.splice(index, 1);
+      this.colorData.splice(index, 1);
 
-    this.formGroup.removeControl(`pictureinput${index}`);
-    this.formGroup.removeControl(`color${index}`);
+
+      console.log("=========== Updated Arrays ===========");
+      console.log(this.inputs);
+      console.log(this.imageDataBottom);
+      console.log(this.colorData);
+      console.log("=========== Updated Arrays ===========");
+
+    }
+   
     
   }
 
@@ -193,16 +240,23 @@ onFileSelectBottom(event: any, index: number) {
 
 
 
-      getSelectedColor(event: any, index: number)
-      {
-            console.log(event.target.value + "  " + index);
+  getSelectedColor(event: any, index: number) {
+    console.log(event.target.value + "  " + index);
+  
+    if (index >= 0 && index < this.colorData.length) {
+      this.colorData[index] = event.target.value;
+    } else if (index === this.colorData.length) {
+      // If index is equal to the length of the array, you can use push to add a new element at the end.
+      this.colorData.push(event.target.value);
+    }
+  
+      console.log("=========== getSelectedColor Arrays ===========");
+      console.log(this.inputs);
+      console.log(this.imageDataBottom);
+      console.log(this.colorData);
+      console.log("=========== getSelectedColor Arrays ===========");
+  }
 
-            if (index >= 0 && index <= this.colorData.length) {
-              this.colorData.splice(index, 0, event.target.value);
-            }
-
-            console.log(this.colorData);
-      }
 
 
 

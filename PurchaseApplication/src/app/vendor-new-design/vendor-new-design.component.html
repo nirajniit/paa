@@ -157,17 +157,23 @@
             <label style="margin-bottom: 8px;">Colors<span style="color:red;">*</span></label><br>
 
             <ng-container *ngFor="let input of inputs; let i = index">
-                <input type="file" (change)="onFileSelectBottom($event, i)" [name]="'picture__input' + i"
-                  formControlName="item_picture">
+
+                <input type="file" (change)="onFileSelectBottom($event, i)"  formControlName="item_picture{{i}}" />
+                
+                    <img [src]="input" alt="Selected Image" />
+                
+
               
-                <input [id]="'text' + i" [name]="'color' + i" type="text" style="width: 94px; padding: 7px; margin-top: 10px;"
-                formControlName="item_color" (keyup)="getSelectedColor($event, i)">
+                <input [id]="'text' + i"  type="text" style="width: 94px; padding: 7px; margin-top: 10px;"                formControlName="item_color" (keyup)="getSelectedColor($event, i)" /> 
               
-                <button (click)="removeInput(i)" *ngIf="inputs.length > 1" class="sachinbtn">-</button>
+                <input type="button" (click)="removeInput(i)"  class="sachinbtn" value="-" /> 
                 <br />
               </ng-container>
+
+
+
               
-            <button (click)="addInput()" class="sachinbtn">+</button>
+            <input type="button" (click)="addInput()" class="sachinbtn" value="+" />  
         </div>
 
 
@@ -180,7 +186,7 @@
             <div class="col" style="display: flex;align-items: center;">
                 <img src="assets/images/Group 562.svg" style="width: 13%;height: 40px;">
                 &nbsp;<input type="number" class="form-control" id="price" placeholder="" name="price"
-                    formControlName="price" style="width: 66%;margin-left: 14px;">
+                    formControlName="price" style="width: 66%;margin-left: 14px;"/> 
             </div>
             <div class="col" style="width: 30%;">
                 <h4>/ Piece</h4>
@@ -190,8 +196,13 @@
 
         <div class="row" style="padding: 54px 64px;">
             <div class="col"></div>
-            <div class="col"><button type="submit" class="btn" >SUBMIT</button></div>
+            <div class="col"><input type="submit" class="btn" value="SUBMIT"> </div>
             <div class="col"></div>
         </div>
+
+       
+
+
     </div>
 </form>
+
