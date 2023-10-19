@@ -110,6 +110,7 @@ export class VendorNewDesignComponent implements OnInit {
       console.log(params);
       this.user_id = params['vendorid']; 
       console.log(this.user_id);
+      alert(this.user_id)
     });
 
   }
