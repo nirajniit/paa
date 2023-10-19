@@ -1,0 +1,214 @@
+<!-- <div class="container-fluid main1">
+    <div class="row reverse"><a href="javascript:history.back()"><img src="assets/images/back.svg" width="120%;"></a>
+    </div>
+    <div class="title">
+        <h2 style="font-size:20px;">New Design</h2>
+    </div>
+    <div class="row home">
+        <a routerLink="/home.component"><img src="assets/images/home.svg" width="28px;"></a>
+    </div>
+</div> -->
+<app-vendor-header></app-vendor-header>
+
+
+<div class="new_design">
+    <p id="headertitle" >New Design</p>
+</div>
+
+
+<form [formGroup]="vendorForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+   <!-- <h1  formControlName="vendormainid"  >{{user_id}}</h1> -->
+    <div class="container-fluid" style="padding: 16px 20px 90px 20px;">
+
+        <!-- {{user}} -->
+        <div class="row">
+            <div class="file-upload">
+                <div class="image-upload-wrap" [style.backgroundImage]="'url(' + imageSrc + ')'" id="backgroundElement">
+          
+                    <input type="file" (change)="onFileSelected($event)" accept="image/*" class="file-upload-input"
+                      name="topimage" id="topimage" formControlName="topimage">
+                    <div class="drag-text">
+
+                      <img src="assets/images/icon.png" width="50px;">
+                      <h3>Upload Images</h3>
+                    </div>
+                  </div>
+                  
+                <!-- <div class="file-upload-content">
+                    <img class="file-upload-image" src="#" alt="your image" />
+                    <div class="image-title-wrap">
+                        <button type="button" class="remove-image">Remove <span
+                                class="image-title">Uploaded Image</span></button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="row" style="margin:0px 0px;">
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="text-field">Style No.<span style="color:red;">*</span></label>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-6" style="width: 40% !important;">
+                        <select class="form-select" id="brandid" name="brandid" formControlName="brandid">
+                            <option *ngFor="let element of brandidval" [value]="element.id">
+                                {{element.name}}
+                            </option>
+                            
+
+                        </select>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-6" style="width: 58% !important;">
+                        <input type="number" class="form-control" id="brandnumber" placeholder="" name="brandnumber"
+                            formControlName="brandnumber">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="select-option">Brand<span style="color:red;">*</span></label>
+                <select class="form-select" id="brand" name="brand" formControlName="brand">
+
+                    <option *ngFor="let element of brandvalue" [value]="element.id">
+                        {{element.name}}
+                    </option>
+
+
+                </select>
+            </div>
+
+
+        </div>
+        <div class="row" style="margin:21px 0px;">
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="select-option">Category<span style="color:red;">*</span></label>
+                <select class="form-select" id="category" name="category" formControlName="category">
+                    <option *ngFor="let element of categoryvalue" [value]="element.id">
+                        {{element.name}}
+                    </option>
+                </select>
+            </div>
+
+
+        </div>
+        <div class="row" style="margin:20px 0px;">
+
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="select-option">Season<span style="color:red;">*</span></label>
+                <select class="form-select" id="season" name="season" formControlName="season">
+                    <option *ngFor="let element of seasonvalue" [value]="element.id">
+                        {{element.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6" style="width: 47% !important;">
+                <label for="text-field">Designer<span style="color:red;">*</span></label>
+                <input type="name" class="form-control" id="designer" placeholder="" name="designer"
+                    formControlName="designer">
+            </div>
+
+
+        </div>
+        <div class="row1">
+            <div class="column">
+
+                <label>Gender<span style="color:red;">*</span></label><br>
+                <div style="display:flex;">
+                    <div class="check">
+                        <input type="radio" class="checked" id="male" value="M" formControlName="gender">
+                        &nbsp;&nbsp;<label class="custom-control" for="male">Male</label>
+                    </div>
+                    <div class="check">
+                        <input type="radio" class="" id="female" formControlName="gender" value="F"> &nbsp;&nbsp;<label
+                            class="custom-control" for="gender">Female</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3 class="border1">Design Description</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Fabric<span style="color:red;">*</span></label><br>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" id="fabric"
+                    name="fabric" formControlName="fabric"></textarea>
+            </div>
+        </div>
+        <div class="row1" style="margin-top: 30px;">
+            <div class="column">
+
+                <label style="margin-bottom: 6px;">Size<span style="color:red;">*</span></label><br>
+                <div style="display:flex;">
+                    <div *ngIf="sizes" style="display: flex;">
+
+                        <select class="form-select" id="selectedItems" formControlName="size" multiple>
+                            <option *ngFor="let item of sizes" [value]="item.id">{{ item.size }} </option>
+                        </select>
+    
+
+                       
+
+                    </div>
+
+                    
+                </div>
+
+            </div>
+        </div>
+        <div class="row2" style="margin-top: 29px;">
+            <label style="margin-bottom: 8px;">Colors<span style="color:red;">*</span></label><br>
+
+            <ng-container *ngFor="let input of inputs; let i = index">
+
+                <input type="file" (change)="onFileSelectBottom($event, i)"  formControlName="item_picture{{i}}" />
+                
+                    <img [src]="input" alt="Selected Image" />
+                
+
+              
+                <input [id]="'text' + i"  type="text" style="width: 94px; padding: 7px; margin-top: 10px;"                formControlName="item_color" (keyup)="getSelectedColor($event, i)" /> 
+              
+                <input type="button" (click)="removeInput(i)"  class="sendbtn" value="-" /> 
+                <br />
+                
+              </ng-container>
+
+
+
+              
+            <input type="button" (click)="addInput()" class="sendbtn" value="+" />  
+        </div>
+
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col">
+                <h3 class="border1">Prospected Price<span style="color:red;">*</span></h3>
+            </div>
+        </div>
+        <div class="row" style="display:flex !important;align-items: center;">
+            <div class="col" style="display: flex;align-items: center;">
+                <img src="assets/images/Group 562.svg" style="width: 13%;height: 40px;">
+                &nbsp;<input type="number" class="form-control" id="price" placeholder="" name="price"
+                    formControlName="price" style="width: 66%;margin-left: 14px;"/> 
+            </div>
+            <div class="col" style="width: 30%;">
+                <h4>/ Piece</h4>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding: 54px 64px;">
+            <div class="col"></div>
+            <div class="col"><input type="submit" class="btn" value="SUBMIT"> </div>
+            <div class="col"></div>
+        </div>
+
+       
+
+
+    </div>
+</form>
+

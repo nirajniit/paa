@@ -1,0 +1,74 @@
+<div class="main">
+    <div class="container-fluid background">
+        <div class="row design">
+            <div class="col">
+                <h4 style="font-weight: lighter;font-style: italic;font-size:18px;">I don’t design clothes. I design dreams.
+                </h4>
+                <h6 style="text-align:center;">— Ralph Lauren</h6>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid" style="padding: 0;">
+        <div class="row justify-content-center design1" style="margin:0;">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <h1 class="mb-4 text-center text">Login Here</h1>
+                <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+
+
+
+                    <div class="mb-3">
+                        <input type="tel" class="form-control input" id="phone" formControlName="mobile" placeholder="Enter your phone number" required>
+                        <div *ngIf="f.mobile.touched && f.mobile.invalid" class="">
+                            <div *ngIf="f.mobile.errors.required" style="color:white;margin-top:5px;">
+                                <h1> Mobile Number is required. </h1>
+                            </div>
+                            <div *ngIf="f.mobile.errors.pattern" style="color:white;margin-top:5px;">
+                                <h1> Please, Enter 10 digit Mobile Number. </h1>
+                            </div>
+
+                            <div *ngIf="f.mobile.hasError('minlength')" style="color:white;margin-top:5px;">
+                                <h1> Please, Enter minimum 10 digit Mobile Number. </h1>
+                            </div>
+
+                            <div *ngIf="f.mobile.hasError('maxlength')" style="color:white;margin-top:5px;">
+                                <h1> Please, Enter Maximum 10 digit Mobile Number. </h1>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control input" id="password" formControlName="password" placeholder="Enter your password" required>
+                    </div>
+
+
+                    <div class="row" style="margin: 0;">
+                        <div class="col"></div>
+                        <div class="col" style="text-align: right;"><a routerLink="#" class="anchor">Forgot Password?</a></div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col"></div>
+                        <div class="col">
+                            <button type="submit" [disabled]="LoginForm.invalid" class="btn">Submit</button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<!-- 
+<div *ngFor="let temp of temps" style="border: 1px solid black;">
+    {{ temp.roleId }}
+    {{ temp.roleName}}
+    {{ temp.mobile }}
+
+</div> -->

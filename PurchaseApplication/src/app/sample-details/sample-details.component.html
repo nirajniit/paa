@@ -1,0 +1,132 @@
+<div class="container-fluid">
+     <div>
+          <img src="{{imgConfig}}/{{productdata.file1}}" alt="">
+     </div>
+     <div class="hello">
+          <div class="">
+               <p style="color: #C51724;text-align: center;font-weight: 700;font-size: 15px;">BoutiquesAsia &nbsp; |
+                    &nbsp; #BA56342</p>
+               <input type="submit" value="Review History" class="btn">
+               <input type="submit" value="Simple Description" class="mybtn">
+               <p style="text-align: center;margin-top: 5px;">Style No.: <span style="font-weight: 600;"> SW 5300</span>
+               </p>
+               <p style="color: #F5C142; text-align: center;"> IN PROCESS</p>
+          </div>
+     </div>
+</div>
+
+
+<form action="" [formGroup]="superForm" (ngSubmit)="onSubmit()">
+     <div class="container-fluid1">
+          <div class="style">
+               <label for="" class="lab">Style No.</label> <br>
+               <input type="text" class="inp" >
+               <label for="" style="margin-top: 12px;" class="lab">Category</label> <br>
+               <input type="text" class="inp" >
+               <label for="" style="margin-top: 12px;" class="lab">Season</label> <br>
+               <input type="text" class="inp">
+               <div class="child">
+                    <div>
+                         <label for="" style="margin-top: 16px;" style="font-weight: 500;">Gender </label> <br>
+                         <input type="radio"><label for="" style="font-weight: 500;color: black;"
+                              class="fe">Female</label>
+                    </div>
+               </div>
+          </div>
+          <div class="style">
+               <label for="" class="lab">Brand</label><br>
+               <input type="text" class="inp1">
+               <label for="" style="margin-top: 12px;" class="lab">Lot No.</label><br>
+               <input type="text" class="inp">
+               <label for="" style="margin-top: 12px;" class="lab">Designer</label><br>
+               <input type="text" class="inp">
+          </div>
+     </div>
+
+
+
+
+     <div class="container-fluid2">
+          <div class="box">
+               <h3 style="color: black; font-weight: 600;">Design Description</h3>
+               <div class="boder"></div>
+          </div>
+          <div class="box">
+               <label style="color: black; font-weight: 500;margin-top: 23px;font-size: 20px;">Fabric</label> <br>
+               <input type="text" class="muinp">
+          </div>
+     </div>
+
+
+
+
+     <span style="color: black; font-weight: 500;font-size: 20px; padding-left: 21px; padding-top: 20px;">Size</span>
+     <div class="container-fluid3">
+          <div class="box2">
+               <div class="father">
+                    <span><input type="checkbox" name="" id="" class="chek"></span> <span class="mm">S</span>
+               </div>
+               <div class="mychild">
+                    <span><input type="checkbox" name="" id="" class="chek1"></span><span class="ch">3XL</span>
+               </div>
+          </div>
+          <div class="box2">
+               <div class="father">
+                    <span><input type="checkbox" name="" id="" class="chek"></span> <span class="mm">M</span>
+               </div>
+               <div class="mychild">
+                    <span><input type="checkbox" name="" id="" class="chek1"></span><span class="ch">4XL</span>
+               </div>
+          </div>
+          <div class="box2">
+               <div class="father">
+                    <span><input type="checkbox" name="" id="" class="chek"></span> <span class="mm">L</span>
+               </div>
+               <div class="mychild">
+                    <span><input type="checkbox" name="" id="" class="chek1"></span><span class="ch">5XL</span>
+               </div>
+          </div>
+          <div class="box2">
+               <div class="father">
+                    <span><input type="checkbox" name="" id="" class="chek"></span> <span class="mm">XL</span>
+               </div>
+               <div class="mychild">
+                    <span><input type="checkbox" name="" id="" class="chek1"></span><span class="ch">6XL</span>
+               </div>
+          </div>
+          <div class="box2">
+               <div class="father">
+                    <span><input type="checkbox" name="" id="" class="chek"></span> <span class="mm">2XL</span>
+               </div>
+          </div>
+     </div>
+
+</form>
+<span style="color: black; font-weight: 500;font-size: 20px; padding-left: 19px;">Color</span>
+<div class="container-fluid4">
+     <div class="box4" *ngFor="let item of  allImages ; let i = index">
+          <div class="row" *ngIf="item != null">
+               <img src="{{imgConfig}}/{{item}}" alt="" class="iimg"> <span
+                    style="color:#000000; font-weight: 400;">{{productdata.color}}</span>
+          </div>
+          <div *ngIf=null></div>
+     </div>
+
+</div>
+
+
+
+<div class="container-fluid5">
+     <div class="last">
+          <h3>Prospected Price</h3>
+          <div class="bord">
+          </div>
+          <img src="assets/images/rupee.png" alt="" class="myimg1"> <input type="text" class="inp4"><span
+               class="inp5" formControlName="s">/Piece</span>
+          <div>
+               <img src="assets/images/pdf.png" alt="" class="mypdf">
+               <!-- download able file -->
+               <!-- <a href="assets/images/gff.jpg" download>download pdf</a> -->
+          </div>
+     </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <img src="{{imgConfig}}/{{productdata.file1}}" alt="" class="iimg">
+
+    <div class="peragraph">
+        <p style="color: #C51724;opacity: 1; font-weight: 700; padding-top: 7px; text-align: center;">BoutiquesAsia |
+            #BA56342</p>
+        <p style="padding-top: 13px;text-align: center;">Style No.: <span style="color: #000000; font-weight: 700;"> SW
+                5300 </span> <br>
+            <span style="color:  #116418; font-size: 14px; font-weight: 600;"> COMPLETED</span>
+        </p>
+    </div>
+
+    <div class="boder"> </div>
+
+    <div class="mainbox">
+        <div class="box">
+            <p style="color: gray; font-size: 14px;" class="ri">Brand: <span
+                    style="font-weight: 600; opacity: 1px;color: black; ">{{productdata.brand}}</span>  </p>
+            <p style="color: gray; font-size: 14px;">Category: <span
+                    style="font-weight: 600; opacity: 1px;color: black;">{{productdata.category}}</span> </p>
+        </div>
+        <div class="box">
+            <p style="color: gray; font-size: 14px; padding-left: 176px;">Season: <span
+                    style="font-weight: 600; opacity: 1px;color: black;">{{productdata.season}}</span> </p>
+            <p style="color: gray; font-size: 14px; padding-left: 58px;">Lot No.: <span
+                    style="font-weight: 600; opacity: 1px;color: black; ">2022/12/1/5324/SW</span> </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid1">
+    <div class="box3">
+        <h5 style="color: #000000; padding-left: 21px; font-weight: 700;">Rate and Review</h5>
+        <div class="boder1"> </div>
+    </div>
+    <div class="box4">
+        <p style="color: #000000; padding-left: 21px; font-weight: 600;  font-size: 16px;">Stitching Quality  <span class="star"><rating cancel='true'></rating></span></p>
+        <p style="color: #000000; padding-left: 21px;padding-top: 0px;  font-weight: 600; font-size: 16px; ">Fitting  <span class="star1"><rating cancel='true'></rating></span> </p>
+        <p style="color: #000000; padding-left: 21px;padding-top: 3px;  font-weight: 600; font-size: 16px;">Finishing  <span class="star2"><rating cancel='true'></rating></span></p>
+        <p style="color: #000000; padding-left: 21px;padding-top: 3px;  font-weight: 600; font-size: 16px;">Press  <span class="star3"><rating cancel='true'></rating></span></p>
+        <p style="color: #000000; padding-left: 21px;padding-top: 3px;  font-weight: 600; font-size: 16px;">Packing  <span class="star4"> <rating cancel='true'></rating></span></p>
+    </div>
+    <div class="box5">
+        <h5 style="color: #000000; padding-left: 21px; font-weight: 700;">Feedback</h5>
+        <div class="boder2"> </div>
+        <input type="text" class="myinp">
+        <div class="father">
+            <div class="child">
+                <a href="" style="color: #C51724; text-decoration: none;padding-left: 21px;">Cancel</a>
+            </div>
+            <div class="child">
+              <a href="/final-submit.component?proddata={{this.productdata.id}}"> <input type="submit" class="btn"></a>
+            </div>
+        </div>
+    </div>
+</div>

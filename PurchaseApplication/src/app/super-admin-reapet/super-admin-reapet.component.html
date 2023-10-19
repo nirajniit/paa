@@ -1,0 +1,89 @@
+<div class="container-fluid">
+    <img src="{{imgConfig}}/{{productdata.file1}}" alt="" class="myimg"> <br>
+    <p style="text-align: center; padding-top:7px; color: #C51724;font-weight: bold;">BoutiquesAsia | #BA56342</p>
+    <p style="text-align: center;padding-left: 0%; padding-top: 14px; color: #000000; font-weight: 500;">Style No.:
+        <span style="font-weight: bold;">SW 5300</span>
+    </p>
+    <p style=" text-align: center; color: #116418;">Approved</p>
+
+    <div class="boder"></div>
+    <div class="first">
+        <input type="submit" value="LOT NO.: 2022/12/2/5324/SW" class="btn">
+    </div>
+    <div class="container2">
+        <div class="box">
+            <p style="color: gray;font-size: 13px;">Brand: <span
+                    style="font-weight: 500; color: #000000;font-size: 13px;">{{productdata.brand}}</span> </p>
+            <p style="color: gray;font-size: 13px;">Category: <span
+                    style="font-weight:  500; color: #000000;font-size: 13px;">{{productdata.category}}</span> </p>
+
+        </div>
+        <div class="box1">
+            <p style="color: gray;font-size: 13px;padding-left: 109px;">Season: <span
+                    style="font-weight: 500; color: #000000;font-size: 13px;">{{productdata.season}}</span> </p>
+            <p style="color: gray; font-size: 13px;">Lot No.: <span
+                    style="font-weight:  500; color: #000000;font-size: 13px;">2022/12/1/5324/SW</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<!-- input fild start -->
+<form [formGroup]="superForm" (ngSubmit)="superForm()" enctype="multipart/form-data">
+    <div class="main">
+        <div class="row">
+            <div class="submain">
+                <div class="childmain">
+                    <img src="{{imgConfig}}/{{productdata.file1}}" alt="" height="85px" width="85px">
+                    <p style="font-size: 13px;">{{productdata.color}}</p>
+                </div>
+                <div class="childmain">
+                    <div class="subchildmain">
+                        <div style="display: flex; align-items: center; ">
+                            <input type="checkbox" class="chek" formControlName="s"><label for="" class="label">S</label><input type="text"
+                                class="inp1" formControlName="s">
+                        </div>
+                        <div style="display: flex; align-items: center; padding-top: 12px;">
+                            <input type="checkbox" class="chek" formControlName="l"><label for="" class="label">M</label><input type="text"
+                                class="inp" formControlName="m">
+                        </div>
+                        <div style="display: flex; align-items: center; padding-top: 12px;">
+                            <input type="checkbox" class="chek" formControlName="m"><label for="" class="label">L</label><input type="text"
+                                class="inp1" formControlName="l">
+                        </div>
+                    </div>
+                </div>
+                <div class="childmain">
+                    <div style="margin-top: 10px;
+                   font-size: 50px;font-weight: 200;">
+                        66
+                    </div>
+                </div>
+            </div>
+            <div *ngIf=null></div>
+        </div>
+    </div>
+
+    <!--End input fild start -->
+
+    <div class="container5">
+        <div class="box6">
+            <p style="font-weight: 500;">Order Placed By</p><input type="text"
+                style="width: 145px; padding-left: 9px; outline: none; border-radius: 3px;   min-height: 31px;  border: 0.25px solid gray;">
+            <p style="padding-top: 18px; font-weight: 500;">Delivery Date</p><input type="text"
+                style="width: 145px; outline: none; border-radius: 3px; min-height: 31px;  padding-left: 9px;  border: 0.25px solid gray;">
+            <br>
+            <input type="submit" value="REPEAT ORDER" class="report">
+        </div>
+        <div class="box6">
+            <p style="font-weight: 500;">Quantity</p><input type="text"
+                style="width: 145px;  padding-left: 9px; outline: none; border-radius: 3px;   min-height: 31px;  border: 0.25px solid gray;">
+            <p style="padding-top: 18px;font-weight: 500;">Total Cost</p>
+            <img src="assets/images/rupee.png" alt="" style="height: 25px; width: 25px;"><input type="text" formControlName="price"
+                style="width: 119px; padding-left: 5px;  outline: none; border-radius: 3px;   min-height: 31px;  border: 0.25px solid gray;">
+            <br> <br> <br>
+            <a href="" style="margin-top: 30px; color: red;text-decoration: none; padding-left: 99px;">Cencal</a>
+        </div>
+    </div>
+</form>

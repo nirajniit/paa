@@ -1,0 +1,34 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 21px;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.img1 {
+    height: 21px;
+    width: 21px;
+    margin-top: 11px;
+}
+
+@media screen and (min-width:550px) {
+    .img1 {
+        height: 32px;
+        width: 32px;
+    }
+}
+
+.box2 {
+    display: flex;
+    justify-content: end;
+    height: 125px;
+}

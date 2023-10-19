@@ -1,0 +1,242 @@
+<div class="main2">
+    <div class="reverse"><a href="javascript:history.back()"><img src="assets/images/back.svg" width="100%;"></a></div>
+    <div class="title">
+        <h2>Add User</h2>
+    </div>
+    <div class="home">
+        <a routerLink="/superadmin.component"><img src="assets/images/home.svg" width="31px;"></a>
+    </div>
+</div>
+<div class="container-fluid borderbottom">
+    <div class="row mt-4" id="color" style="justify-content: space-between;text-align: center;">
+        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 33%;">
+            <h1 id="green">{{this.merchantval}}</h1>
+            <p>Merchant</p>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 33%;">
+            <h1 id="blue">{{this.vendorval}}</h1>
+            <p> Vendor</p>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 33%;">
+            <h1 id="red">{{this.adminval}}</h1>
+            <p>Admins</p>
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid" style="padding-bottom:110px;">
+
+
+    <div class="row">
+        <form style="width: 100%;" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+
+            <div class="row mt-4" style="justify-content: space-between;">
+
+                <div class="col-lg-4 col-sm-4 col-md-4" style="display:flex;width: 33%;">
+                    <input type="radio" class="" id="merchant" value="4" (change)="userType('merchant')"
+                        formControlName="roleid">
+                    &nbsp;&nbsp;<label class="custom-control" for="merchant" style="color:#204c77;" >Merchant</label>
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-md-4" style="display:flex;width: 33%;">
+
+                    <input type="radio" formControlName="roleid" class="ven" id="vendor" value="3"
+                        (change)="userType('vendor')"  checked> &nbsp;&nbsp; <label class="custom-control" for="vendor"
+                        style="color:#116418;">Vendor</label>
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-md-4" style="display:flex;width: 33%;">
+                    <input type="radio" class="addmin" id="admin" value="2" (change)="userType('admin')"
+                        formControlName="roleid">
+                    &nbsp;&nbsp; <label class="custom-control" for="admin" style="color:#c51724;">Admin</label>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="row" id="divvendor" style="display: block;">
+                <div class="col-lg-4 col-sm-4 col-md-4" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="name">Name</label>
+                    <input type="text" class="form-control" id="name111" placeholder="" formControlName="firstName">
+                    <div *ngIf="f.firstName.touched && f.firstName.invalid" class="">
+                        <div *ngIf="f.firstName.errors.required" style="color:red;margin-top:5px;">firstName is
+                            required.</div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="phone">Mobile Number </label>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 20%;">
+                            <input type="text" class="form-control" id="number" placeholder="+91" value="+91">
+                        </div>
+                        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 77%;margin-left: 2%;">
+                            <input type="number" class="form-control" id="phone" placeholder="" formControlName="mobile"
+                                pattern="[1-9]{1}[0-9]{9}">
+                            <div *ngIf="f.mobile.touched && f.mobile.invalid" class="">
+                                <div *ngIf="f.mobile.errors.required" style="color:red;margin-top:5px;">Mobile Number is
+                                    required.</div>
+                                <div *ngIf="f.mobile.errors.pattern" style="color:red;margin-top:5px;">Please, Enter 10
+                                    digit Mobile Number.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="pass">Password </label>
+                    <input type="password" class="form-control" id="pass" placeholder="" name="pass"
+                        formControlName="pass">
+                </div>
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 40%;padding: 0;">
+                    <label class="custom-control" for="id">Brand ID </label>
+                    <input type="text" class="form-control" id="brandid" placeholder="" formControlName="brandid">
+                </div>
+
+               
+                <div *ngFor="let value of values; let i = index"> 
+                    <input type="text" [(ngModel)]="value.value" #name="ngModel" name="value{{i}}" [ngModelOptions]="{standalone: true}"  (ngModelChange)="searchChanged($event)" >
+                    <span style="color:red"> {{value.error}}</span>
+                    <input type="button" (click)="removevalue(i)" value="Remove">
+
+
+                  </div> 
+                  <input type="button" (click)="addvalue()" value="Add">
+
+
+
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-5" style="text-align: right;padding: 0;width: 100%;">
+                    <button type="submit" class="btn6">CREATE</button>
+                </div>
+            </div>
+
+
+
+
+            <div id="divmerchant" class="row" style="display: none;">
+                <div class="col-lg-4 col-sm-4 col-md-4" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="" name="name" formControlName="firstName">
+                    
+                </div>
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="phone">Mobile Number </label>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 20%;">
+                            <input type="number" class="form-control" id="number" placeholder="+91" name="number"
+                                value="+91">
+                        </div>
+                        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 77%;margin-left: 2%;">
+                            <input type="number" class="form-control" id="phone" placeholder="" name="phone"
+                                formControlName="mobile">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="pass">Password </label>
+                    <input type="password" class="form-control" id="pass" placeholder="" name="pass"
+                        formControlName="pass">
+                </div>
+                <div class="row" style="width: 100%;">
+                    <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 48%;padding: 0;margin-right: 1%;">
+                        <label class="custom-control" for="id">Longitude </label>
+                        <input type="number" class="form-control" id="number" placeholder="" name="longone"
+                            formControlName="longone">
+                    </div>
+
+                    <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 48%;padding: 0;margin-left: 1%;">
+                        <label class="custom-control" for="id">Latitude</label>
+                        <input type="number" class="form-control" id="number" placeholder="" name="latone"
+                            formControlName="latone">
+                    </div>
+                </div>
+                <div class="row" style="width: 100%;">
+                    <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 48%;padding: 0;margin-right: 1%;">
+                        <label class="custom-control" for="id">Longitude </label>
+                        <input type="number" class="form-control" id="number" placeholder="" name="longtwo"
+                            formControlName="longtwo">
+                    </div>
+
+                    <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 48%;padding: 0;margin-left: 1%;">
+                        <label class="custom-control" for="id">Latitude</label>
+                        <input type="number" class="form-control" id="number" placeholder="" name="lattwo"
+                            formControlName="lattwo">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-5" style="text-align: right;padding: 0;width: 100%;">
+                    <button type="submit" class="btn6">CREATE</button>
+                </div>
+            </div>
+
+            <div id="divadmin" class="row" style="display: none;">
+                <div class="col-lg-4 col-sm-4 col-md-4" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="" name="firstName" formControlName="firstName">
+                </div>
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="phone">Mobile Number </label>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 20%;">
+                            <input type="number" class="form-control" id="number" placeholder="+91" name="number"
+                                value="+91">
+                        </div>
+                        <div class="col-lg-4 col-sm-4 col-md-4" style="width: 77%;margin-left: 2%;">
+                            <input type="number" class="form-control" id="phone" placeholder="" name="mobile"
+                                formControlName="mobile">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-3" style="width: 100%;padding: 0;">
+                    <label class="custom-control" for="pass">Password </label>
+                    <input type="password" class="form-control" id="pass" placeholder="" name="pass"
+                        formControlName="pass">
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-md-4 mt-5" style="text-align: right;padding: 0;width: 100%;">
+                    <button type="submit" class="btn6">CREATE</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+<div class="container-fluid sticky">
+    <div class="row" style="justify-content: center !important;margin: 0px;">
+        <div class="col-md-3 col-sm-3 col-lg-3">
+            <a routerLink="#"><img src="/assets/images/New Design empty.svg" width="27px;"></a>
+            <h6>New Design</h6>
+        </div>
+        <div class="col-md-3 col-sm-3 col-lg-3">
+            <a routerLink="#"><img src="/assets/images/Order history.svg" width="37px;"></a>
+            <h6>Order History</h6>
+        </div>
+        <div class="col-md-3 col-sm-3 col-lg-3">
+            <a routerLink="#"><img src="/assets/images/Repeat order.svg" width="37x;"></a>
+            <h6>Repeat Order</h6>
+        </div>
+        <div class="col-md-3 col-sm-3 col-lg-3">
+            <a routerLink="#"><img src="/assets/images/1.1.svg" width="35px;"></a>
+            <h6>User Profile</h6>
+        </div>
+        <div class="col-md-3 col-sm-3 col-lg-3">
+            <a routerLink="#"><img src="/assets/images/1.2.svg" width="35px;"></a>
+            <h6>My Profile</h6>
+        </div>
+    </div>
+</div>

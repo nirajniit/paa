@@ -1,0 +1,30 @@
+.sticky {
+    padding: 5px 0px;
+    text-align: center;
+    background: #F6F5FD;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  .row {
+
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .row>* {
+    flex-shrink: 0;
+    width: 25% !important;
+    max-width: 25%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+  }
+
+  h6 {
+    font-size: 11px;
+    margin-top: 9px;
+    ;
+  }
